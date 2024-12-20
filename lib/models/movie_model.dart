@@ -3,6 +3,7 @@ class Movie {
   final String title;
   final String overview;
   final double rating;
+  final String posterPath;
   final List<String> cast;
   final String genre;
 
@@ -11,6 +12,7 @@ class Movie {
     required this.title,
     required this.overview,
     required this.rating,
+    required this.posterPath,
     required this.cast,
     required this.genre,
   });
@@ -21,6 +23,7 @@ class Movie {
       overview: json['overview'],
       rating: json['vote_average'].toDouble(),
       cast: List<String>.from(json['cast'] ?? []),
+      posterPath: json['posterPath'] ?? '',
       genre: json['genre'] ?? 'Unknown',
     );
   }
